@@ -32,8 +32,8 @@ app.post('/agregarUsuario',(req,res)=>{
    
 })
 
-app.listen(3000,()=>{
-    console.log('Servidor escuchando en el puerto 3000')
+app.listen(10000,()=>{
+    console.log('Servidor escuchando en el puerto 10000')
 })
 
 //fun consultar
