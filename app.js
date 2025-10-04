@@ -21,7 +21,7 @@ app.post('/agregarUsuario',(req,res)=>{
         let nombre=req.body.nombre
         let id=req.body.id
 
-        con.query('INSERT INTO usuarios (id_usuario, nombre) VALUES (?, ?)', [id, nombre], (err, respuesta, fields) => {
+        con.query('INSERT INTO usuarios (id_usuarios, nombre) VALUES (?, ?)', [id, nombre], (err, respuesta, fields) => {
             if (err) {
                 console.log("Error al conectar", err);
                 return res.status(500).send("Error al conectar");
