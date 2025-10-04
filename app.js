@@ -6,7 +6,7 @@ var con=mysql.createConnection({
     host:'localhost',
     user:'root',
     password:'azulytimo',
-    database:'usuarios'
+    database:'usuario'
 })
 con.connect();
 
@@ -21,7 +21,7 @@ app.post('/agregarUsuario',(req,res)=>{
         let nombre=req.body.nombre
         let id=req.body.id
 
-        con.query('INSERT INTO usuarios (id_usuarios, nombre) VALUES (?, ?)', [id, nombre], (err, respuesta, fields) => {
+        con.query('INSERT INTO usuarios (id_usuario, nombre) VALUES (?, ?)', [id, nombre], (err, respuesta, fields) => {
             if (err) {
                 console.log("Error al conectar", err);
                 return res.status(500).send("Error al conectar");
@@ -68,7 +68,7 @@ app.get('/obtenerUsuario',(req,res)=>{
 app.post('/borrarUsuario', (req, res) => {
     const id = req.body.id; // El ID del usuario a eliminar viene en el cuerpo de la solicitud
     console.log("hola")
-    con.query('DELETE FROM usuarios WHERE id_usuarios = ?', [id], (err, resultado, fields) => {
+    con.query('DELETE FROM usuarios WHERE id_usuario = ?', [id], (err, resultado, fields) => {
 
         if (err) {
             console.error('Error al borrar el usuario:', err);
